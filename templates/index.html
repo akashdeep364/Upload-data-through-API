@@ -1,0 +1,36 @@
+
+
+
+{% block head %}
+
+<title>Database operations</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">CRUD operations</h1>
+
+    <div class="form">
+        <form action="/db_opeartions" method="POST">
+            <label for="operation">Choose database</label>
+
+<select id="db" name="db">
+  <option value="mysql">MySQL</option>
+  <option value="mongodb">Mongodb</option>
+  <option value="cassandra">Cassandra</option>
+</select>
+<select id="operation" name="operation">
+
+    <option value = "create"> Create table </option>
+    <option value = "insert"> Insert Data </option>
+    <option value = "update"> Update table </option>
+    <option value = "delete"> Delete data </option>
+    <option value = "bulk_insert"> Bulk insertion </option>
+    <option value = "download"> Download data </option>
+
+        <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+{% endblock %}
